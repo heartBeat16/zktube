@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Test App",
+  "version": "0.1.1",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage","scripting", "tabs","activeTab"],
+  "host_permissions": ["https://*.youtube.com/*"],
+   "description":"Anonymous Verification for youtube using Sisimo",
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": { "48": "I48.png", "128": "I128.png" },
+  "action": {
+    "default_popup": "Popup.html",
+    "default_title": "Anonymous Verification"
+  }
+}
